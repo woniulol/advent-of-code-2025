@@ -16,7 +16,7 @@ class MoreRotation(Rotation):
 
 def get_puzzle_input() -> list[MoreRotation]:
     res = []
-    with open("puzzle-input.txt") as f:
+    with open("puzzle-input-day1.txt") as f:
         for line in f:
             line = line.strip()
             if line:
