@@ -1,0 +1,67 @@
+from typing import Tuple, List
+
+"""
+fresh or spoiled
+"""
+
+raw_fresh_id_ranges = """3-5
+10-14
+16-20
+12-18
+
+1
+5
+8
+11
+17
+32"""
+
+"""
+Inclusive
+
+Overlapping
+"""
+
+
+def get_puzzle_input() -> Tuple[List, List]:
+    fresh_ingredient_ids = []
+    avaliable_ingredient_ids = []
+
+    is_fresh_ingredient_ids = True
+
+    for string in raw_fresh_id_ranges.split("\n"):
+        if string == "":
+            is_fresh_ingredient_ids = False
+            continue
+
+        if is_fresh_ingredient_ids:
+            fresh_ingredient_ids.append(string)
+            continue
+
+        avaliable_ingredient_ids.append(string)
+
+    return sorted(fresh_ingredient_ids), sorted(avaliable_ingredient_ids)
+
+
+def main() -> None:
+    fresh_ingredient_ids, avaliable_ingredient_ids = get_puzzle_input()
+    res = [] 
+
+    for i in range(len(avaliable_ingredient_ids)):
+        avaliable_ingredient = avaliable_ingredient_ids[i]
+
+        for j in range(len(fresh_ingredient_ids)):
+            range_min, range_max = tuple(fresh_ingredient_ids[j].split("-"))
+
+            if avaliable_ingredient_ids[i] < range_min:
+                continue
+
+            if avaliable_ingredient_ids[i] > range_max:
+                continue
+
+            res.append(avaliable_ingredient_ids[i])
+
+    print(list(set(res))
+    print(len(res))
+
+
