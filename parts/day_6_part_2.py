@@ -31,13 +31,11 @@ def main() -> None:
     for i in range(col_len - 1, -1, -1):
         for j in range(row_len):
             char = lines[j][i]
-            print(char)
 
             if j + 1 == row_len:
                 if char != " ":
                     operator = char
                     nums.append("".join(chars).strip(" "))
-                    print(nums)
                     res.append(eval(operator.join(nums)))
 
                     chars: List[str] = []
@@ -49,7 +47,6 @@ def main() -> None:
                 if len(chars) == 0:
                     continue
 
-                print(chars)
                 nums.append("".join(chars).strip(" "))
                 chars: List[str] = []
 
