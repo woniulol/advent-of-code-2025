@@ -13,6 +13,7 @@ from parts import (
     day_6_part_2,
     day_7_part_1,
     day_7_part_2,
+    day_8_part_1,
 )
 
 if __name__ == "__main__":
@@ -29,4 +30,5 @@ if __name__ == "__main__":
     # day_6_part_1.main()
     # day_6_part_2.main()
     # day_7_part_1.main()
-    day_7_part_2.main()
+    # day_7_part_2.main()
+    day_8_part_1.main()
