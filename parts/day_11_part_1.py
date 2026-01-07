@@ -36,9 +36,9 @@ def main() -> None:
                 for node in nodes[i]:
                     if node == "out":
                         nodes_out.add(node_to_process)
-                        continue
                     node_cum_count[node] = node_cum_count.get(node, 0) + 1
                     nodes_to_process.append(node)
+                break
 
     res = 0
     for node in nodes_out:
